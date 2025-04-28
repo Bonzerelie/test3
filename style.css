@@ -5,7 +5,7 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  text-align: center; /* Centering text globally */
+  text-align: center;
 }
 
 .container {
@@ -49,7 +49,7 @@ button {
 
 button:hover:not(:disabled) {
   background-color: #2980b9;
-  transform: scale(1.05); /* Smooth scale on hover */
+  transform: scale(1.05);
 }
 
 button:disabled {
@@ -57,19 +57,23 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Note buttons alignment and sizing */
+/* Updated Note Buttons Layout */
 #noteButtons {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
   gap: 10px;
   margin-top: 20px;
-  justify-items: center; /* Centering buttons within the grid */
+  justify-items: center; /* Center buttons within the grid */
+  width: 100%; /* Make sure the container width is 100% */
+  max-width: 380px; /* Restrict the maximum width of note buttons */
+  margin-left: auto;
+  margin-right: auto; /* Center align the whole note buttons section */
 }
 
 #noteButtons button {
   padding: 12px 0;
   font-size: 14px;
-  width: 100%; /* Ensure buttons take up full width */
+  width: 100%; /* Ensure buttons take up full width within grid item */
   transition: background-color 0.3s ease;
 }
 
@@ -100,7 +104,7 @@ button:disabled {
 
 .stats {
   margin-top: 30px;
-  text-align: center; /* Centered stats */
+  text-align: center;
   font-size: 16px;
 }
 
@@ -109,7 +113,7 @@ button:disabled {
   margin-bottom: 6px;
 }
 
-/* For small screens */
+/* For smaller screens */
 @media (max-width: 480px) {
   .container {
     width: 95%;
@@ -117,11 +121,12 @@ button:disabled {
   }
 
   button {
-    flex: 1 1 100%; /* Full width on small screens */
+    flex: 1 1 100%;
     font-size: 16px;
   }
 
   #noteButtons {
-    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
+    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on smaller screens */
+    max-width: 100%; /* Ensure note buttons fit in smaller screen sizes */
   }
 }
