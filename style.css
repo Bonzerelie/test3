@@ -1,80 +1,59 @@
 body {
   font-family: 'Arial', sans-serif;
+  text-align: center;
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  text-align: center;
 }
 
 .container {
-  width: 90%;
-  max-width: 400px;
-  margin-top: 20px;
-  background: #ffffff;
+  max-width: 400px; /* Narrower for phone screens */
+  margin: 20px auto;
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-size: 28px; /* Larger title */
-  margin-bottom: 20px;
-  color: #3498db;
-}
-
-#controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
   margin-bottom: 20px;
 }
 
 button {
-  flex: 1 1 45%;
-  min-width: 120px;
   margin: 5px;
-  padding: 14px 10px;
+  padding: 12px 18px;
   font-size: 16px;
-  font-weight: bold;
+  border: none;
+  border-radius: 8px;
   background-color: #3498db;
   color: white;
-  border: none;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.1s ease;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover:not(:disabled) {
   background-color: #2980b9;
-  transform: scale(1.05);
 }
 
 button:disabled {
-  background-color: #ccc;
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 
-/* Fix for note button grid */
 #noteButtons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 20px;
-  justify-items: center; /* Center buttons within the grid */
-  width: 100%;
-  max-width: 360px; /* Set a max-width for the note button container */
-  margin-left: auto;
-  margin-right: auto; /* Center align the whole note buttons section */
 }
 
 #noteButtons button {
-  padding: 12px 0;
+  margin: 5px;
+  padding: 12px 18px;
   font-size: 14px;
-  width: 90%; /* Set the width of each note button to 90% of its grid cell */
-  transition: background-color 0.3s ease;
+  width: 90%; /* Reduce width of note buttons */
+  max-width: 80px; /* Limit the max width of the note buttons */
+  transition: background-color 0.3s;
 }
 
 #noteButtons button.correct {
@@ -85,48 +64,29 @@ button:disabled {
   background-color: red;
 }
 
-.feedback {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  min-height: 24px;
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-
-.feedback.correct {
-  color: green;
-}
-
-.feedback.incorrect {
-  color: red;
-}
-
 .stats {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 16px;
+  margin-top: 20px;
 }
 
 .stats span {
   display: block;
-  margin-bottom: 6px;
+  margin-top: 5px;
 }
 
-/* For smaller screens */
+/* Mobile responsiveness */
 @media (max-width: 480px) {
   .container {
-    width: 95%;
+    width: 90%;
     padding: 15px;
   }
 
   button {
-    flex: 1 1 100%;
-    font-size: 16px;
+    width: 100%;
+    margin: 5px 0;
   }
 
-  #noteButtons {
-    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on smaller screens */
-    max-width: 100%;
+  #noteButtons button {
+    width: 45%; /* Increase the button width on smaller screens */
+    max-width: 100%; /* Prevent overlap on small screens */
   }
 }
