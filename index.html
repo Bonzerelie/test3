@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relative Pitch Game! 🎹🎶</title> <!-- Updated title -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Relative Pitch Game! 🎹🎶</h1> <!-- Updated title -->
+    
+    <div id="controls">
+      <button id="startBtn">Start Game</button>
+      <button id="playNoteBtn" disabled>Replay Note</button>
+      <button id="playReferenceBtn">Play Reference Note - C4</button>
+      <button id="nextBtn" disabled>Next</button>
+      <button id="resetScoreBtn">Reset Score</button>
+    </div>
+
+    <div id="noteButtons"></div>
+
+    <div id="feedback" class="feedback"></div> <!-- Feedback appears here -->
+
+    <div class="stats">
+      <h2>Score</h2>
+      <span>Correct: <span id="correctCount">0</span></span>
+      <span>Incorrect: <span id="incorrectCount">0</span></span>
+      <span>Total: <span id="totalCount">0</span></span>
+      <span>Accuracy: <span id="accuracy">0%</span></span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
