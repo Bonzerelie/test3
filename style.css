@@ -65,7 +65,7 @@ button:disabled {
   margin-top: 20px;
   justify-items: center; /* Center buttons within the grid */
   width: 100%;
-  max-width: 360px; /* Slightly narrower container for note buttons */
+  max-width: 200px; /* Slightly narrower container for note buttons */
   margin-left: auto;
   margin-right: auto; /* Center align the whole note buttons section */
 }
