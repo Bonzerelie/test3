@@ -57,7 +57,7 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Narrowing note buttons */
+/* Fix for note button grid */
 #noteButtons {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
@@ -65,7 +65,7 @@ button:disabled {
   margin-top: 20px;
   justify-items: center; /* Center buttons within the grid */
   width: 100%;
-  max-width: 200px; /* Slightly narrower container for note buttons */
+  max-width: 360px; /* Set a max-width for the note button container */
   margin-left: auto;
   margin-right: auto; /* Center align the whole note buttons section */
 }
@@ -73,7 +73,7 @@ button:disabled {
 #noteButtons button {
   padding: 12px 0;
   font-size: 14px;
-  width: 80%; /* Narrower button width */
+  width: 90%; /* Set the width of each note button to 90% of its grid cell */
   transition: background-color 0.3s ease;
 }
 
@@ -127,6 +127,6 @@ button:disabled {
 
   #noteButtons {
     grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on smaller screens */
-    max-width: 100%; /* Ensure note buttons fit in smaller screen sizes */
+    max-width: 100%;
   }
 }
