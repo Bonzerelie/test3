@@ -5,7 +5,7 @@ body {
   padding: 0;
   display: flex;
   justify-content: center;
-  text-align: center; /* ✅ Center all text */
+  text-align: center; /* Centering text globally */
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 }
 
 h1 {
-  font-size: 28px; /* ✅ Bigger font size for the title */
+  font-size: 28px; /* Larger title */
   margin-bottom: 20px;
   color: #3498db;
 }
@@ -43,13 +43,13 @@ button {
   color: white;
   border: none;
   border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.1s ease; /* ✅ Add smooth transform */
+  transition: background-color 0.3s ease, transform 0.1s ease;
   cursor: pointer;
 }
 
 button:hover:not(:disabled) {
   background-color: #2980b9;
-  transform: scale(1.05); /* ✅ Slight scale effect for a fun hover */
+  transform: scale(1.05); /* Smooth scale on hover */
 }
 
 button:disabled {
@@ -57,25 +57,28 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Note buttons alignment and sizing */
 #noteButtons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 4 buttons per row */
+  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
   gap: 10px;
   margin-top: 20px;
+  justify-items: center; /* Centering buttons within the grid */
 }
 
 #noteButtons button {
   padding: 12px 0;
-  font-size: 14px; /* ✅ Slightly smaller text inside note buttons */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+  font-size: 14px;
+  width: 100%; /* Ensure buttons take up full width */
+  transition: background-color 0.3s ease;
 }
 
 #noteButtons button.correct {
-  background-color: green; /* ✅ Green background when correct */
+  background-color: green;
 }
 
 #noteButtons button.incorrect {
-  background-color: red; /* ✅ Red background when incorrect */
+  background-color: red;
 }
 
 .feedback {
@@ -97,7 +100,7 @@ button:disabled {
 
 .stats {
   margin-top: 30px;
-  text-align: center; /* ✅ Center stats too */
+  text-align: center; /* Centered stats */
   font-size: 16px;
 }
 
@@ -106,7 +109,7 @@ button:disabled {
   margin-bottom: 6px;
 }
 
-/* For very small devices */
+/* For small screens */
 @media (max-width: 480px) {
   .container {
     width: 95%;
@@ -114,11 +117,11 @@ button:disabled {
   }
 
   button {
-    flex: 1 1 100%;
+    flex: 1 1 100%; /* Full width on small screens */
     font-size: 16px;
   }
 
   #noteButtons {
-    grid-template-columns: repeat(3, 1fr); /* ✅ For small screens, 3 buttons per row */
+    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
   }
 }
